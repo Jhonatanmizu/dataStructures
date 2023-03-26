@@ -43,6 +43,13 @@ class LinkedList {
     this.count++;
     return true;
   }
+  /**
+   * "Get the node at the given index."
+   *
+   * The function starts by checking if the index is in the list. If it's not, it returns null
+   * @param index - The index of the element you want to get.
+   * @returns The node at the given index.
+   */
   getElementAt(index) {
     if (!this.isInList(index)) return null;
     let node = this.head;
@@ -51,12 +58,25 @@ class LinkedList {
     }
     return node;
   }
+  /**
+   * "Remove the element from the list and return it."
+   *
+   * The function starts by finding the index of the element. If the element is not found, the function
+   * returns undefined. If the element is found, the function removes it from the list and returns it
+   * @param element - The element to remove from the list.
+   * @returns The element that was removed.
+   */
   remove(element) {
     const index = this.indexOf(element);
     return this.removeAt(index);
   }
+  /**
+   * If the index is valid, we traverse the list until we reach the index, and then we remove the node
+   * at that index
+   * @param index - The position of the element to be removed.
+   * @returns The element that was removed from the list.
+   */
   removeAt(index) {
-    // const isInList = index >= 0 && index < this.count;
     if (!this.isInList(index)) return null;
     let current = this.head;
     if (index === 0) {
@@ -72,12 +92,24 @@ class LinkedList {
     this.count--;
     return current.element;
   }
+  /**
+   * Return the number of items in the list.
+   * @returns The number of items in the stack.
+   */
   size() {
     return this.count;
   }
+  /**
+   * If the count is less than or equal to zero, return true, otherwise return false.
+   * @returns The count of the number of items in the queue.
+   */
   isEmpty() {
     return this.count <= 0;
   }
+  /**
+   * The function returns a string representation of the linked list
+   * @returns The string representation of the linked list.
+   */
   toString() {
     if (this.head == null) {
       return "";
@@ -90,9 +122,21 @@ class LinkedList {
     }
     return objString;
   }
+  /**
+   * If the index is greater than or equal to 0 and less than the count, then return true, otherwise
+   * return false.
+   * @param index - The index of the item you want to check.
+   * @returns The index of the item in the list.
+   */
   isInList(index) {
     return index >= 0 && index < this.count;
   }
+  /**
+   * We start at the head of the list and traverse the list until we find the element or we reach the end
+   * of the list
+   * @param element - The element to search for.
+   * @returns The index of the element in the linked list.
+   */
   indexOf(element) {
     let current = this.head;
     for (let i = 0; i < this.count && current != null; i++) {
@@ -103,6 +147,10 @@ class LinkedList {
     }
     return -1;
   }
+  /**
+   * It returns the head of the linked list.
+   * @returns The head of the linked list.
+   */
   getHead() {
     return this.head;
   }
