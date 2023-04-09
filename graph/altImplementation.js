@@ -73,20 +73,6 @@ function generateSubgraphs(graph) {
 }
 
 const subgraphs = generateSubgraphs(myGraph);
-console.log(subgraphs);
-subgraphs[3].edges.forEach((e) => {
-  console.log("HADOUKEN  EDGE", e);
+subgraphs.forEach((sub) => {
+  console.log("Sub", sub);
 });
-// Output:
-// [
-//   { vertices: ['A'], edges: [] },
-//   { vertices: ['B'], edges: [] },
-//   { vertices: ['C'], edges: [] },
-//   { vertices: ['D'], edges: [] },
-//   { vertices: ['A', 'B'], edges: [['A', 'B']] },
-//   { vertices: ['A', 'C'], edges: [['A', 'C']] },
-//   { vertices: ['A', 'D'], edges: [['A', 'D'], ['D', 'A']] },
-//   { vertices: ['B', 'C'], edges: [['B', 'C']] },
-//   { vertices: ['C', 'D'], edges: [['C', 'D']] },
-//   { vertices: ['D', 'A'], edges: [['D', 'A'], ['A', 'D']] }
-// ]
